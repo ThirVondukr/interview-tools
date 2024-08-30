@@ -1,0 +1,9 @@
+<section [class.no-print]="!shouldPrint()">
+  <h4>{{ field().title }}</h4>
+  @for (field of field().fields; track field) {
+    <app-field-router
+      [field]="field"
+      [formOptions]="formOptions()"
+      [(ngModel)]="cva.value" />
+  }
+</section>

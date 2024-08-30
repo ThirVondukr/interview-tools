@@ -1,0 +1,16 @@
+<h2 class="full-name">{{ value["fullName"] }}</h2>
+<app-text-field
+  class="full-name-control"
+  [(ngModel)]="value['fullName']"
+  (ngModelChange)="saveChanges()"
+  [field]="{ key: 'fullName', title: 'Full Name', type: 'text-field' }" />
+
+@for (field of config().fields; track field.key) {
+  <app-field-router
+    [attr.data-field-type]="field.type"
+    [field]="field"
+    [formOptions]="config().options"
+    [(ngModel)]="value"
+    (ngModelChange)="saveChanges()"
+    [ngStyle]="style(field.style)" />
+}

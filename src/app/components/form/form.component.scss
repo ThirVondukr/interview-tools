@@ -1,0 +1,29 @@
+:host {
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  gap: 1rem;
+}
+[data-field-type="text-field"] {
+  display: block;
+  grid-column: span 2;
+}
+
+[data-field-type="radio-group"],
+[data-field-type="section"] {
+  display: block;
+  grid-column: span 4;
+}
+
+.full-name {
+  display: none;
+  @media print {
+    display: inherit;
+  }
+}
+
+.full-name-control {
+  grid-column: span 4;
+  @media print {
+    display: none;
+  }
+}

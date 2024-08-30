@@ -1,0 +1,27 @@
+@let formField = field();
+@let key = formField.key;
+
+@if (cva.value$()) {
+  @switch (formField.type) {
+    @case ("text-field") {
+      <app-text-field
+        [(ngModel)]="cva.value$()[key]"
+        (ngModelChange)="onChange(key, $event)"
+        [field]="formField" />
+    }
+    @case ("radio-group") {
+      <app-radio-group-field
+        [(ngModel)]="cva.value$()[key]"
+        (ngModelChange)="onChange(key, $event)"
+        [field]="formField"
+        [formOptions]="formOptions()" />
+    }
+    @case ("section") {
+      <app-section-field
+        [(ngModel)]="cva.value$()[key]"
+        (ngModelChange)="onChange(key, $event)"
+        [field]="formField"
+        [formOptions]="formOptions()" />
+    }
+  }
+}

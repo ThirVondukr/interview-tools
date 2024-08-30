@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  gap: 1rem;
+  flex-flow: column nowrap;
+  align-items: start;
+}
+
+app-form {
+  width: 100%;
+}

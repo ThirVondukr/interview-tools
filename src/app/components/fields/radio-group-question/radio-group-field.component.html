@@ -1,0 +1,20 @@
+<mat-radio-group
+  (input)="cva.value = $any($event.target).value"
+  [value]="cva.value$()"
+  (blur)="cva.markAsTouched()"
+  [disabled]="cva.disabled$()"
+  [class.title-style-top]="field().style?.titlePosition === 'top'"
+  [class.no-print]="cva.value$() == formOptions().radioGroupDefaultAnswer">
+  <mat-label
+    [class.fixed-label-width]="field().style?.titlePosition !== 'top'"
+    >{{ field().title }}</mat-label
+  >
+  <span>
+    @for (
+      option of field().options || formOptions().radioGroupDefaultOptions;
+      track option
+    ) {
+      <mat-radio-button value="{{ option }}">{{ option }} </mat-radio-button>
+    }
+  </span>
+</mat-radio-group>

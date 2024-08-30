@@ -1,0 +1,10 @@
+<mat-form-field>
+  <mat-label>{{ field().title }}</mat-label>
+  <textarea
+    (input)="cva.value = $any($event).target.value"
+    [value]="cva.value$()"
+    matInput
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize">
+  </textarea>
+</mat-form-field>

@@ -1,0 +1,20 @@
+mat-radio-group {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.fixed-label-width {
+  width: 180px;
+  display: inline-block;
+}
+
+.title-style-top {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+}
